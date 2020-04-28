@@ -1,0 +1,9 @@
+G:\git-repos\Kuchani-kwasiora\kuchnia-kwasiora-domain\bin\Debug\netcoreapp3.1\kuchnia-kwasiora-domain.deps.json
+G:\git-repos\Kuchani-kwasiora\kuchnia-kwasiora-domain\bin\Debug\netcoreapp3.1\kuchnia-kwasiora-domain.dll
+G:\git-repos\Kuchani-kwasiora\kuchnia-kwasiora-domain\bin\Debug\netcoreapp3.1\kuchnia-kwasiora-domain.pdb
+G:\git-repos\Kuchani-kwasiora\kuchnia-kwasiora-domain\obj\Debug\netcoreapp3.1\kuchnia-kwasiora-domain.csprojAssemblyReference.cache
+G:\git-repos\Kuchani-kwasiora\kuchnia-kwasiora-domain\obj\Debug\netcoreapp3.1\kuchnia-kwasiora-domain.csproj.CoreCompileInputs.cache
+G:\git-repos\Kuchani-kwasiora\kuchnia-kwasiora-domain\obj\Debug\netcoreapp3.1\kuchnia-kwasiora-domain.AssemblyInfoInputs.cache
+G:\git-repos\Kuchani-kwasiora\kuchnia-kwasiora-domain\obj\Debug\netcoreapp3.1\kuchnia-kwasiora-domain.AssemblyInfo.cs
+G:\git-repos\Kuchani-kwasiora\kuchnia-kwasiora-domain\obj\Debug\netcoreapp3.1\kuchnia-kwasiora-domain.dll
+G:\git-repos\Kuchani-kwasiora\kuchnia-kwasiora-domain\obj\Debug\netcoreapp3.1\kuchnia-kwasiora-domain.pdb
