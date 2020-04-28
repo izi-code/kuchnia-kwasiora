@@ -1,8 +1,8 @@
 .DS_Store
 
 # dotnet core
-bin/
-obj/
+**/bin/
+**/obj/
 project.lock.json
 NuGetScratch/
 
@@ -30,4 +30,5 @@ ops/*.retry
 
 # IDE
 .idea/
-.vs/
+.vs/**
+
