@@ -1,13 +1,11 @@
-using kuchnia_kwasiora_database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace kuchani_kwasiora_webapi
+namespace KuchniaKwasiora.WebApi
 {
     public class Startup
     {
@@ -21,8 +19,6 @@ namespace kuchani_kwasiora_webapi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<KkDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory

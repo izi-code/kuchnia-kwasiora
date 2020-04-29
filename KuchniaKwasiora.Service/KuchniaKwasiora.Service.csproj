@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>kuchnia_kwasiora_domain</RootNamespace>
+    <RootNamespace>KuchniaKwasiora.Service</RootNamespace>
+    <AssemblyName>KuchniaKwasiora.Service</AssemblyName>
   </PropertyGroup>
 
 </Project>

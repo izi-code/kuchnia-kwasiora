@@ -1,4 +1,4 @@
-﻿namespace kuchnia_kwasiora_domain.Common
+﻿namespace KuchniaKwasiora.Domain.Common
 {
     public abstract class BaseModel
     {
