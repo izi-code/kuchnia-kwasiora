@@ -5,4 +5,8 @@
     <RootNamespace>KuchniaKwasiora.Domain</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CSharpFunctionalExtensions" Version="2.7.1" />
+  </ItemGroup>
+
 </Project>

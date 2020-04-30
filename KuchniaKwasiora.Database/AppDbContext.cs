@@ -1,4 +1,5 @@
 ﻿using KuchniaKwasiora.Domain.Models;
+using KuchniaKwasiora.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -53,6 +54,8 @@ namespace KuchniaKwasiora.Database
                 x.Property(p => p.Id).ValueGeneratedOnAdd();
                 x.Property(p => p.FirstName).IsRequired();
                 x.Property(p => p.Email).IsRequired();
+                x.Property(p => p.Email)
+                    .HasConversion(email => email.Value, email => Email.Create(email).Value);
             });
 
             modelBuilder.Entity<Post>(x =>

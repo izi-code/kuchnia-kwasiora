@@ -1,3 +1,7 @@
+using KuchniaKwasiora.Database;
+using KuchniaKwasiora.Domain.Interfaces;
+using KuchniaKwasiora.Repository;
+using KuchniaKwasiora.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -20,12 +24,22 @@ namespace KuchniaKwasiora.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddMvcCore();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddSingleton<IPostService, PostService>();
+            services.AddSingleton<IUserService, UserService>();
+
+            services.AddSingleton<IPostRepository, PostRepository>();
+            services.AddSingleton<IUserRepository, UserRepository>();
+
+            var connectionString = Configuration.GetConnectionString("Default");
+            services.AddSingleton<AppDbContext>(provider => new AppDbContext(connectionString, true));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
