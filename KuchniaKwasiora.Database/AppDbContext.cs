@@ -61,10 +61,11 @@ namespace KuchniaKwasiora.Database
             modelBuilder.Entity<Post>(x =>
             {
                 x.ToTable("Post").HasKey(k => k.Id);
-                x.HasOne(p => p.User);
+                x.HasOne(p => p.User).WithMany();
 
                 x.Property(p => p.Id).ValueGeneratedOnAdd();
-            });            
+                x.Property(p => p.Content).IsRequired();
+            });
         }
     }
 }

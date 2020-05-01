@@ -2,6 +2,7 @@
 using KuchniaKwasiora.Domain.Interfaces;
 using KuchniaKwasiora.Domain.Models;
 using KuchniaKwasiora.Domain.ValueObjects;
+using System.Linq;
 
 namespace KuchniaKwasiora.Repository
 {
@@ -22,6 +23,11 @@ namespace KuchniaKwasiora.Repository
             _dbContext.SaveChanges();
 
             return user.Id;
+        }
+
+        public User GetUserByEmail(Email email)
+        {
+            return _dbContext.Users.SingleOrDefault(x => x.Email == email);
         }
     }
 }

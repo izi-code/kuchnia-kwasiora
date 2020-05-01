@@ -24,12 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\KuchniaKwasiora.Database\KuchniaKwasiora.Database.csproj" />
     <ProjectReference Include="..\KuchniaKwasiora.Domain\KuchniaKwasiora.Domain.csproj" />
+    <ProjectReference Include="..\KuchniaKwasiora.Repository\KuchniaKwasiora.Repository.csproj" />
+    <ProjectReference Include="..\KuchniaKwasiora.Service\KuchniaKwasiora.Service.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
