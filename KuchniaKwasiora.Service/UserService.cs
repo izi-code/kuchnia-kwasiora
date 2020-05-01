@@ -1,4 +1,5 @@
-﻿using KuchniaKwasiora.Domain.DTOs;
+﻿using CSharpFunctionalExtensions;
+using KuchniaKwasiora.Domain.DTOs;
 using KuchniaKwasiora.Domain.Interfaces;
 using KuchniaKwasiora.Domain.ValueObjects;
 
@@ -13,16 +14,17 @@ namespace KuchniaKwasiora.Service
             _userRepository = userRepository;
         }
 
-        public long Create(UserDto user)
+        public Result<long> Create(UserDto user)
         {
             if (string.IsNullOrEmpty(user.FirstName))
-                return -1;
+                return Result.Failure<long>("User's first name can not be empty");
 
             var email = Email.Create(user.Email);
             if (email.IsFailure)
-                return -1;
+                return Result.Fail<long>($"Email {user.Email} is invalid");
 
-            return _userRepository.Create(user.FirstName, user.LastName, email.Value);
+            var dbUserId = _userRepository.Create(user.FirstName, user.LastName, email.Value);
+            return Result.Success(dbUserId);
         }
     }
 }

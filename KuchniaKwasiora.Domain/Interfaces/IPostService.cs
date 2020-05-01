@@ -1,9 +1,10 @@
-﻿using KuchniaKwasiora.Domain.DTOs;
+﻿using CSharpFunctionalExtensions;
+using KuchniaKwasiora.Domain.DTOs;
 
 namespace KuchniaKwasiora.Domain.Interfaces
 {
     public interface IPostService
     {
-        long Create(PostDto post);
+        Result<long> Create(PostDto post);
     }
 }

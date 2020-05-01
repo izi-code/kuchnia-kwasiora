@@ -24,6 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\KuchniaKwasiora.Database\KuchniaKwasiora.Database.csproj" />
     <ProjectReference Include="..\KuchniaKwasiora.Domain\KuchniaKwasiora.Domain.csproj" />
     <ProjectReference Include="..\KuchniaKwasiora.Repository\KuchniaKwasiora.Repository.csproj" />
