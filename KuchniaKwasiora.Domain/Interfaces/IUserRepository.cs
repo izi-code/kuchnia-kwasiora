@@ -7,5 +7,6 @@ namespace KuchniaKwasiora.Domain.Interfaces
     {
         long Create(string firstName, string lastName, Email email);
         User GetUserByEmail(Email email);
+        bool IsUnique(Email email);
     }
 }

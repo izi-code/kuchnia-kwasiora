@@ -23,6 +23,10 @@ namespace KuchniaKwasiora.Service
             if (email.IsFailure)
                 return Result.Fail<long>($"Email {user.Email} is invalid");
 
+            var isEmailUnique = _userRepository.IsUnique(email.Value);
+            if (!isEmailUnique)
+                return Result.Fail<long>($"Email {user.Email} alredy used");
+
             var dbUserId = _userRepository.Create(user.FirstName, user.LastName, email.Value);
             return Result.Success(dbUserId);
         }
