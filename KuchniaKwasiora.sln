@@ -20,6 +20,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KuchniaKwasiora.Database.Mi
 		{30BC1506-2FE9-46A2-B15E-997D312AE141} = {30BC1506-2FE9-46A2-B15E-997D312AE141}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45D491C4-0373-4016-AE83-63701C49E54A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
