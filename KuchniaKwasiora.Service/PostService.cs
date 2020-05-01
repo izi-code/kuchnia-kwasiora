@@ -20,16 +20,12 @@ namespace KuchniaKwasiora.Service
         public Result<long> Create(PostDto post)
         {
             if (string.IsNullOrWhiteSpace(post.Email))
-            {
                 return Result.Failure<long>("Can not create a post without an Author");
-            }
 
             var userEmail = Email.Create(post.Email).Value;
             var user = _userRepository.GetUserByEmail(userEmail);
             if (user == null)
-            {
                 return Result.Failure<long>($"User with {userEmail.Value} email not found");
-            }
 
             var dbPostId = _postRepository.Create(new Post(post.Content, user));
             return Result.Success(dbPostId);
