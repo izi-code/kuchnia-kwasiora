@@ -5,7 +5,8 @@ namespace KuchniaKwasiora.Domain.Interfaces
 {
     public interface IUserRepository
     {
-        long Create(string firstName, string lastName, Email email);
+        long Create(User user);
+        User Get(long id);
         User GetUserByEmail(Email email);
         bool IsUnique(Email email);
     }

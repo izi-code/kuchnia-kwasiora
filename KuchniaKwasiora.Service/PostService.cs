@@ -2,7 +2,6 @@
 using KuchniaKwasiora.Domain.DTOs;
 using KuchniaKwasiora.Domain.Interfaces;
 using KuchniaKwasiora.Domain.Models;
-using KuchniaKwasiora.Domain.ValueObjects;
 
 namespace KuchniaKwasiora.Service
 {
@@ -17,17 +16,18 @@ namespace KuchniaKwasiora.Service
             _userRepository = userRepository;
         }
 
-        public Result<long> Create(PostDto post)
+        public Result<long> Create(PostDto postDto)
         {
-            if (string.IsNullOrWhiteSpace(post.Email))
+            if (string.IsNullOrWhiteSpace(postDto.Email))
                 return Result.Failure<long>("Can not create a post without an Author");
 
-            var userEmail = Email.Create(post.Email).Value;
-            var user = _userRepository.GetUserByEmail(userEmail);
+            var user = _userRepository.Get(postDto.UserId);
             if (user == null)
-                return Result.Failure<long>($"User with {userEmail.Value} email not found");
+                return Result.Failure<long>($"User does not exist");
 
-            var dbPostId = _postRepository.Create(new Post(post.Content, user));
+            var post = new Post(postDto.Content, user);
+            var dbPostId = _postRepository.Create(post);
+
             return Result.Success(dbPostId);
         }
     }
