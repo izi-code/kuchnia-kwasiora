@@ -3,7 +3,7 @@ using KuchniaKwasiora.Domain.ValueObjects;
 
 namespace KuchniaKwasiora.Domain.Models
 {
-    public class User : BaseModel
+    public class User : Entity
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }

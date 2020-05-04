@@ -2,7 +2,7 @@
 
 namespace KuchniaKwasiora.Domain.Models
 {
-    public class Post : BaseModel
+    public class Post : Entity
     {
         public string Content { get; private set; }
         public virtual User User { get; private set; }
